@@ -1,0 +1,2 @@
+dj_database_url==2.3.0
+Django==5.1.3
