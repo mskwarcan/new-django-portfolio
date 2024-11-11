@@ -1,11 +1,12 @@
 import json
 from django.db import models
+from storages.backends.s3boto3 import S3Boto3Storage
 
 # Create your models here.
 class Project ( models.Model ):
     project_name = models.CharField(max_length = 255)
     project_description = models.TextField()
-    thumbnail = models.ImageField()
+    thumbnail = models.ImageField(storage=S3Boto3Storage())
     
     def __str__(self):
         return self.project_name
